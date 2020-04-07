@@ -1,0 +1,47 @@
+[2020-04-04T19:41:26.088] [FATAL] default - Server Started
+[2020-04-04T19:41:26.187] [DEBUG] default - Orange Collector : [object Object]
+[2020-04-04T19:41:26.189] [DEBUG] default - Maria Collector : [object Object]
+[2020-04-04T19:41:26.427] [ERROR] default - SELECT * FROM vehicles WHERE factionName = 'Hospital'
+[2020-04-04T19:41:26.429] [ERROR] default - SELECT * FROM business INNER JOIN barbershop ON business.id = barbershop.id
+[2020-04-04T19:41:26.430] [ERROR] default - SELECT * FROM business INNER JOIN clothingshop ON business.id = clothingshop.id
+[2020-04-04T19:41:26.431] [ERROR] default - SELECT * FROM business INNER JOIN cheapcardealership ON business.id = cheapcardealership.id
+[2020-04-04T19:41:26.433] [ERROR] default - SELECT * FROM business INNER JOIN commercialcardealership ON business.id = commercialcardealership.id
+[2020-04-04T19:41:26.434] [ERROR] default - SELECT * FROM business INNER JOIN gasstation ON business.id = gasstation.id
+[2020-04-04T19:47:22.127] [FATAL] default - Server Started
+[2020-04-04T19:47:22.194] [DEBUG] default - Orange Collector : [object Object]
+[2020-04-04T19:47:22.196] [DEBUG] default - Maria Collector : [object Object]
+[2020-04-04T19:49:28.237] [FATAL] default - Server Started
+[2020-04-04T19:49:28.302] [DEBUG] default - Orange Collector : [object Object]
+[2020-04-04T19:49:28.304] [DEBUG] default - Maria Collector : [object Object]
+[2020-04-04T19:57:38.226] [WARN] default - whlhrtdl too many wrong codes
+[2020-04-04T20:10:40.654] [FATAL] default - Server Started
+[2020-04-04T20:10:40.720] [DEBUG] default - Orange Collector : [object Object]
+[2020-04-04T20:10:40.722] [DEBUG] default - Maria Collector : [object Object]
+[2020-04-04T20:16:21.248] [FATAL] default - Server Started
+[2020-04-04T20:16:21.317] [DEBUG] default - Orange Collector : [object Object]
+[2020-04-04T20:16:21.319] [DEBUG] default - Maria Collector : [object Object]
+[2020-04-04T20:22:22.873] [FATAL] default - Server Started
+[2020-04-04T20:22:22.939] [DEBUG] default - Orange Collector : [object Object]
+[2020-04-04T20:22:22.941] [DEBUG] default - Maria Collector : [object Object]
+[2020-04-05T14:50:32.900] [FATAL] default - Server Started
+[2020-04-05T14:50:33.006] [DEBUG] default - Orange Collector : [object Object]
+[2020-04-05T14:50:33.008] [DEBUG] default - Maria Collector : [object Object]
+[2020-04-05T16:25:06.974] [FATAL] default - Server Started
+[2020-04-05T16:25:07.059] [DEBUG] default - Orange Collector : [object Object]
+[2020-04-05T16:25:07.060] [DEBUG] default - Maria Collector : [object Object]
+[2020-04-06T18:50:45.058] [DEBUG] default - New Account: cubik228@i.ua | Andrei Andrei
+[2020-04-06T18:51:02.457] [DEBUG] default - Andrei Andrei logged in
+[2020-04-06T18:52:20.061] [DEBUG] default - Andrei Andrei[0]: ytytyt
+[2020-04-06T18:52:21.506] [DEBUG] default - Andrei Andrei[0]: yrtr
+[2020-04-06T18:52:24.213] [DEBUG] default - Andrei Andrei opens menu
+[2020-04-06T18:53:19.457] [DEBUG] default - Andrei Andrei opens menu
+[2020-04-06T18:54:41.132] [DEBUG] default - Andrei Andrei enters ATM
+[2020-04-06T18:55:12.478] [DEBUG] default - Andrei Andrei spawned faggio2
+[2020-04-06T18:55:40.411] [DEBUG] default - Andrei Andrei spawned faggio2
+[2020-04-06T18:56:13.062] [DEBUG] default - Andrei Andrei opens menu
+[2020-04-06T18:57:46.859] [DEBUG] default - Andrei Andrei opens menu
+[2020-04-06T18:58:07.867] [DEBUG] default - Andrei Andrei spawned faggio2
+[2020-04-06T18:59:44.070] [DEBUG] default - Andrei Andrei started works as Orange Collector
+[2020-04-06T19:00:16.828] [DEBUG] default - Andrei Andrei opens menu
+[2020-04-06T19:01:00.728] [DEBUG] default - Andrei Andrei finished works as Orange Collector
+[2020-04-06T19:01:05.365] [DEBUG] default - Andrei Andrei started works as Orange Collector
