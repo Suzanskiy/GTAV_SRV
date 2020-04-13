@@ -168,7 +168,7 @@ mp.events.addCommand({
         const y = '-899.089';
         const z = '32.311';
         const rot = '68.22';
-        player.spawn(x,y,z,rot);
+        player.spawn(new mp.Vector3(x,y,z,rot));
     },
     
 });
