@@ -162,6 +162,14 @@ mp.events.addCommand({
         player.outputChatBox(str);
         misc.log.debug(str);
     },
+
+    'spawn' : (player) => {
+        const x = '-264.864';
+        const y = '-899.089';
+        const z = '32.311';
+        const rot = '68.22';
+        player.setPosition(x,y,z,rot);
+    },
     
 });
 
