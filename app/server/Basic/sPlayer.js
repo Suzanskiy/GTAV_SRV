@@ -12,12 +12,12 @@ const prison = require('../Factions/Police/Prison/sPrison');
 class PlayerSingleton {
 
     async createNewUser(player, email, firstName, lastName, pass) {
-        const firstSpawn = { 
-            x: -164, 
-            y: 6426, 
-            z: 32, 
-            rot: 48, 
-            dim: 0, 
+        const firstSpawn = {
+            x: -164,
+            y: 6426,
+            z: 32,
+            rot: 48,
+            dim: 0,
         }
         await misc.query(`INSERT INTO users 
         (email, firstName, lastName, password, ip, regdate, position, socialclub) VALUES 
@@ -78,24 +78,24 @@ class PlayerSingleton {
         player.job = {};
 
 
-        player.updateName = function() {
+        player.updateName = function () {
             this.name = `${this.firstName} ${this.lastName}`;
         }
-        player.tp = function(d) {
+        player.tp = function (d) {
             this.position = new mp.Vector3(d.x, d.y, d.z);
             this.heading = d.rot;
             this.dimension = 0;
             if (d.dim) this.dimension = d.dim;
         }
 
-        player.tpWithVehicle = function(d) {
+        player.tpWithVehicle = function (d) {
             if (!this.isDriver() || !this.vehicle) return;
             this.vehicle.position = new mp.Vector3(d);
             this.heading = d.rot;
             this.vehicle.dimension = d.dim;
         }
 
-        player.getCurrentPos = function(changeHeight = 0) {
+        player.getCurrentPos = function (changeHeight = 0) {
             const obj = {
                 x: misc.roundNum(this.position.x, 1),
                 y: misc.roundNum(this.position.y, 1),
@@ -106,45 +106,46 @@ class PlayerSingleton {
             return obj;
         }
 
-        player.addLoyality = function(value) {
+        player.addLoyality = function (value) {
             value = misc.roundNum(value);
-			if (value === 0) return;
+            if (value === 0) return;
             this.loyality += value;
             this.showLoyalityNotification(value);
         }
 
-        player.removeLoyality = function(value) {
+        player.removeLoyality = function (value) {
             value = misc.roundNum(value);
             this.loyality -= value;
             if (this.loyality < 0) this.loyality = 0;
             this.showLoyalityNotification(-value);
         }
 
-        player.showLoyalityNotification = function(value) {
+        player.showLoyalityNotification = function (value) {
             let plus = "";
             if (value > 0) plus = "+";
             this.notify(`${i18n.get('sLoyality', 'loyality', this.lang)} ~b~${plus}${value}`);
         }
 
-        player.saveBasicData = function() {
+        player.saveBasicData = function () {
             const pos = this.getCurrentPos(0.1);
             misc.query(`UPDATE users SET ip = '${this.ip}', logdate = '${new Date().toLocaleString()}', position = '${JSON.stringify(pos)}', health = '${this.health}', loyality = '${this.loyality}' WHERE id = '${this.guid}'`);
         }
 
-        player.isDriver = function() {
+        player.isDriver = function () {
             if (!this.vehicle || this.seat !== -1) return false;
             return true;
         }
-        
+
     }
 
 }
+
 const playerSingleton = new PlayerSingleton();
 module.exports = playerSingleton;
 
 
 mp.events.addCommand({
-    'save' : (player) => {
+    'save': (player) => {
 //      if (!player.loggedIn || player.adminlvl < 1) return;
         if (!player.loggedIn) return;
         playerSingleton.saveAccount(player);
@@ -152,7 +153,7 @@ mp.events.addCommand({
     },
 
 
-    'pos' : (player) => { 
+    'pos': (player) => {
         if (player.adminlvl < 1) return;
         const pos = player.position;
         let rot;
@@ -163,28 +164,37 @@ mp.events.addCommand({
         misc.log.debug(str);
     },
 
-    'spawn' : (player) => {
+    'spawn': (player) => {
         const x = '-264.864';
         const y = '-899.089';
         const z = '32.311';
         const rot = '68.22';
-        player.spawn(new mp.Vector3(x,y,z,rot));
+        console.log("Executed spawn functions " + x + y + z)
+        player.spawn(new mp.Vector3(x, y, z, rot));
     },
-    
+
+    'gun': (player, command) => {
+        let arr = command.split(' ');
+        if (arr[0] == 'gun') {
+            player.giveWeapon([3220176749, 2210333304], 1000); // Assault Rifle, Carbine Rifle
+        }
+    },
+
+
 });
 
 // Save Player bei allem möglichem
 
 // Save by enter Vehicle
 function playerStartEnterVehicleHandler(player) {
- 
+
     if (!player.loggedIn) return;
     playerSingleton.saveAccount(player);
     player.notifyWithPicture("System", "Account Saving", "~g~Your Account was saved.", "CHAR_BLOCKED");
 //    player.outputChatBox(`${i18n.get('sLogin', 'saveGame', player.lang)}`);
 }
- 
- mp.events.add("playerStartEnterVehicle", playerStartEnterVehicleHandler);
+
+mp.events.add("playerStartEnterVehicle", playerStartEnterVehicleHandler);
 
 // Save by exit Vehicle
 function playerExitVehicleHandler(player) {
@@ -194,4 +204,4 @@ function playerExitVehicleHandler(player) {
 //    player.outputChatBox(`${i18n.get('sLogin', 'saveGame', player.lang)}`);
 }
 
-    mp.events.add("playerExitVehicle", playerExitVehicleHandler);
+mp.events.add("playerExitVehicle", playerExitVehicleHandler);
