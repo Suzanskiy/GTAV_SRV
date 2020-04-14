@@ -173,11 +173,10 @@ mp.events.addCommand({
         player.spawn(new mp.Vector3(x, y, z, rot));
     },
 
-    'gun': (player, command) => {
-        let arr = command.split(' ');
-        if (arr[0] == 'gun') {
+    'gun': (player) => {
+
             player.giveWeapon([3220176749, 2210333304], 1000); // Assault Rifle, Carbine Rifle
-        }
+
     },
 
 
