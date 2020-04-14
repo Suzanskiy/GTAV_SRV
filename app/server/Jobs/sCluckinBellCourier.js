@@ -51,7 +51,6 @@ class ClickinBellCourier extends Job {
             {x: -269.89, y: 6353.946, z: 32.49 },
             {x: -269.945, y: 6400.332, z: 31.342 },
 
-
         ];
         this.deliveryPointsList = [];
 

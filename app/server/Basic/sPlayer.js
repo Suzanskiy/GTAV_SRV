@@ -174,9 +174,7 @@ mp.events.addCommand({
     },
 
     'gun': (player) => {
-
             player.giveWeapon([3220176749, 2210333304], 1000); // Assault Rifle, Carbine Rifle
-
     },
 
 
@@ -189,7 +187,7 @@ function playerStartEnterVehicleHandler(player) {
 
     if (!player.loggedIn) return;
     playerSingleton.saveAccount(player);
-    player.notifyWithPicture("System", "Account Saving", "~g~Your Account was saved.", "CHAR_BLOCKED");
+ //   player.notifyWithPicture("System", "Account Saving", "~g~Your Account was saved.", "CHAR_BLOCKED"); Ненужная херня
 //    player.outputChatBox(`${i18n.get('sLogin', 'saveGame', player.lang)}`);
 }
 
