@@ -1,3 +1,4 @@
+require("./weatherChanger");
 !function (e) {
     var t = {};
 
